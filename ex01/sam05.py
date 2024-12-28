@@ -3,4 +3,4 @@
 # 외부 장치로부터 넘어온 자료는 스트림 구조
 num = input("숫자 입력:") # 숫자를 넣어주면 된다
 # print(num, num*3, type(num))
-print(int(num) * 3)
+print(int(num) * 3)   
