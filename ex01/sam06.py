@@ -1,0 +1,36 @@
+# 문자열 색인 => 리스트 구조형식
+s = "PYTHON"
+print(s)
+print(s[0], s[1], s[2], s[3], s[4], s[5])
+
+# 잘라서 범위를 줄 수 있는 것이 슬라이싱 (slicing)
+# 문자열 [인덱스 번호], 문자열 [시작 : 끝 번호: 증감값]
+print('문자열 길이:', len(s))
+print(s[0:4]) # start, end - 1
+print(s[:4])
+print(s[:]) # 전체 다 나오게 함
+print(s[::2])
+
+# 반대방향 , 우측 기준
+print(s[-1],s[-2])
+print(s[-6:-1]) # -6 -5 -4 -3 -2 -1 
+print(s[-6:]) # 끝 생략하면 마지막 범위까지 다 나온다
+
+## 지금 부터 cmd 들어가서 python 하고 import keyword
+#print(keyword.kwlist) 안에 있는 단어들은 기억장소 용도로는 쓰지 못한다. 즉 키워드, 식별자라고 얘기한다.
+# Microsoft Windows [Version 10.0.19045.5131]
+# (c) Microsoft Corporation. All rights reserved.
+
+# C:\Users\605>python
+# Python 3.13.1 (tags/v3.13.1:0671451, Dec  3 2024, 19:06:28) [MSC v.1942 64 bit (AMD64)] on win32
+# Type "help", "copyright", "credits" or "license" for more information.
+# >>> import keyword
+# >>> print(keyword.kwlist)
+# ['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 
+# 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+# (f-search `')
+
+# 기억 장소 이름을 지어줄 때 사용자가 식별하려고 쓰는 이름이지만 아무 생각 없이
+
+# 숫자 영자 언더바를 혼용해서 변수 이름을 지정 할 수 있다 a_10
+# 숫자를 첫 단으로는 사용하지 못한다. 
