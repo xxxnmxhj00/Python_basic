@@ -78,3 +78,5 @@ def mysum (start, end):
 print( mysum(1,10))
 print( mysum(1,100))
 print( mysum(5,10))
+
+# 가변인자를 만들면 더 편하게 할 수 있다?
