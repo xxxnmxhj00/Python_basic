@@ -40,16 +40,16 @@
 # # 4. "f(2,3)=200"이 출력됨
 
 
-def func03():
-    def new_func03(a,b):
-        # return 의미는 new_func03() 함수를 종료
-        return a * b
+# def func03():
+#     def new_func03(a,b):
+#         # return 의미는 new_func03() 함수를 종료
+#         return a * b
     
-    # return 의미는 func03() 함수를 종료
-    return new_func03 # new_func03() 함수 주소를 가지고 반환
+#     # return 의미는 func03() 함수를 종료
+#     return new_func03 # new_func03() 함수 주소를 가지고 반환
 
-m = func03() # m에는 new_func03() 함수의 주소를 저장
-print( m(10,20) )
+# m = func03() # m에는 new_func03() 함수의 주소를 저장
+# print( m(10,20) )
 
 # 변수를 주는게 기억장소를 주는게 그냥 일급함수라고 이해합시다
 # 중첩함수에서 외부함수나 내부함수를 변수에 저장
@@ -72,44 +72,67 @@ print( m(10,20) )
 # f1() # inner function b() 함수가 실행
 
 # 함수 클로저 예시
-data = list(range(1,101))
-print(data)
+# data = list(range(1,101))
+# print(data)
 
-def out_func(data):
-    dataset = data
+# def out_func(data):
+#     dataset = data
 
-    def tot():
-        tot_val = sum(dataset)
-        return tot_val
+#     def tot():
+#         tot_val = sum(dataset)
+#         return tot_val
 
-    def avg(tot_val):
-        avg_val = tot_val / len(dataset)
-        return avg_val
+#     def avg(tot_val):
+#         avg_val = tot_val / len(dataset)
+#         return avg_val
 
-    return tot, avg
+#     return tot, avg
     
-# 외부 함수 호출(실행)
-total, average = out_func(data) # tot(), avg() 함수의 주소를 반환 total 은 tot average 는 avg 의미
+# # 외부 함수 호출(실행)
+# total, average = out_func(data) # tot(), avg() 함수의 주소를 반환 total 은 tot average 는 avg 의미
 
-tot_data = total() # 함수 이름을 전달해준거, total() 함수를 실행하라고 위해서 받았으니까
-print('tot=', tot_data)
+# tot_data = total() # 함수 이름을 전달해준거, total() 함수를 실행하라고 위해서 받았으니까
+# print('tot=', tot_data)
 
-avg_data = average(tot_data) # average()를 받아가지고 온거임
-print('avg=', avg_data)
+# avg_data = average(tot_data) # average()를 받아가지고 온거임
+# print('avg=', avg_data)
 
 # 외부함수가 종료됐다고 하더라도 내부함수에 함수가 소멸이 안된다는 것이 특징
 
 # 195 
 
-def double(x):
-    return 2*x
-def func_with_print(f): # f에는 double() 함수 주소
-    def new_func(x):
-        y = f(x) # y = double(x)
-        print(y)
-        return y
-    return new_func
+# def double(x):
+#     return 2*x
+# def func_with_print(f): # f에는 double() 함수 주소
+#     def new_func(x):
+#         y = f(x) # y = double(x)
+#         print(y)
+#         return y
+#     return new_func
 
-# 함수의 주소 전달 받기
-new_double = func_with_print(double)
-print(new_double(5))
+# # 함수의 주소 전달 받기
+# new_double = func_with_print(double)
+# # print(new_double(5))
+
+# 획득자와 지정자(getter, setter)
+def main_func(num):
+    num_val = num
+
+    def getter():
+        return num_val
+    
+    def setter(value):
+        nonlocal num_val # 지역변수가 아니라고 선언, 내부함수에서 외부함수에 선언되 변수가 사용시 설정
+        num_val = value
+
+    return getter, setter
+
+getter, setter = main_func(100)
+
+# getter() 함수 실행
+print( getter())
+
+# setter() 함수 실행
+setter(300)
+print( getter())
+
