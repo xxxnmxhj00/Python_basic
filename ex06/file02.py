@@ -13,7 +13,7 @@ try:
     print(full_text)
     print(type(full_text))
 
-    # 2. readlines()
+    # 2. readlines() # 읽어서 리스트 구조
     ftest3 = open('ex01/sam03.py',mode = 'r', encoding='utf-8')
     lines = ftest3.readlines()
 
@@ -22,7 +22,7 @@ try:
     print(lines)
     print(type(lines))
 
-    # 3. readlines()
+    # 3. readline() # 한줄만 읽어옴
     ftest4 = open('ex01/sam04.py',mode = 'r', encoding='utf-8')
     lines4 = ftest4.readline()
 
@@ -33,3 +33,7 @@ try:
 
 except Exception as e:
     print('Error :', e)
+# 여기는 1줄 처럼 메모리에 남아있기 때문에 프로그램 종료하면 없애 줘야함
+
+finally:
+    ftest.close()
