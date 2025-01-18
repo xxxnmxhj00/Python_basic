@@ -8,7 +8,7 @@ class Super:
         print('부모 클래스 생성자 호출')
         self.name = name
         self.age = age
-
+    
     def display(self):
         print(f"name: {self.name}, age: {self.age}")
 
@@ -30,12 +30,14 @@ class Sub(Super): # 클래스(부모클래스 이름) => 상속개념, name age�
         # gender 자식 클래스의 자원
         self.gender = gender
 
+    # 오버라이딩(상속 받은 메서드 재정의)
     def display(self): # sub 클래스에서 정의한 display
         print(self.name, self.age, self.gender)
 
 # 자식 클래스 객체 생성
 sub = Sub('자식 클래스', 25, '여자')
-sub.display()
+print("-- sub display()")
+sub.display() # 밑에 display 없애면 위의 display 에 2개 값만 나옴 
 sup.display()
 
 print("--- sub 클래스 멤버 변수")
