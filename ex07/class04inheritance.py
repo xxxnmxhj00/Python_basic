@@ -38,5 +38,5 @@ sub = Sub('자식 클래스', 25, '여자')
 sub.display()
 sup.display()
 
-
+print("--- sub 클래스 멤버 변수")
 print(sub.name, sub.gender, sub.age)
