@@ -63,12 +63,12 @@
 #     print('a()함수 : outer function')
 
 #     def b(): # inner function
-#         print('b()함수 : inner function')
+#         print('b()함수 : inner function') # 메모리 할당 받고
 
 #     print('a()함수 종료시 b()함수의 주소를 반환')
 #     return b
 
-# f1 = a()
+# f1 = a() # f1에 b()함수의 주소 => f1()함수 실행 
 # f1() # inner function b() 함수가 실행
 
 # 함수 클로저 예시
@@ -78,7 +78,7 @@
 # def out_func(data):
 #     dataset = data
 
-#     def tot():
+#     def tot(): # 여기는 함수를 실행한건 아님
 #         tot_val = sum(dataset)
 #         return tot_val
 
