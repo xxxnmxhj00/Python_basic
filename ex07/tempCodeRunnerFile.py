@@ -1,3 +1,1 @@
-acc.deposit(10000)
-bal = acc.getBalance()
-print(bal, type(bal))
+bicycle.find('서울','부산') # 상속 받았기 때문에 FPB에 아무것도 정의 안해도 서울 부산 기능 가능

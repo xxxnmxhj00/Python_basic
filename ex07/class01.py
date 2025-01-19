@@ -17,17 +17,17 @@
 #     def minus():
 #         m = x-y
 #         return sub
-    
-#     return plus, minus 
+# 함수만 정의하고 기능 수행은 안함
+#     return plus, minus 함수주소만 반환하는것
 
-# # 함수 호출 내부함수를 수행
+# # 함수 호출 내부함수를 수행 , 내부함수가 사라져도 변수는 x y는 사라지지 않음
 # p,m = calc_func(10,20)
 
 # print("== 함수 실행 결과 ==")
 # print(p(), m()) # 함수는 호출(실행)
     
 # 클래스
-class Calc_class: 
+class Calc_class: # clsss 안에는 무조건 self가 들어가야함
     # 클래스 안에 선언된 변수 => 속성, 상태 # 멤버변수
     # 기본설정 값: public => 공개형
     x = y = 0 
