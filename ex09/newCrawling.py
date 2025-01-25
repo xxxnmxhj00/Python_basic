@@ -62,3 +62,4 @@ print('pickle load...')
 for data in crawling_data2:
     print(data)
     print('-'*50)
+
